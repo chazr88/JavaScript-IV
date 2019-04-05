@@ -35,9 +35,7 @@ class Student extends Person {
         this.favSubjects = studentAttributes.favSubjects;
     }
     listsSubjects(arr) {
-        arr.forEach(function(favsubject){
-            return favsubject
-        });
+        return arr.join();
     }
     PRAssignment(subject) {
         return `${this.name} has submitted a PR for ${subject}`
@@ -65,7 +63,7 @@ class ProjectManager extends Instructor {
 
 const goku = new Instructor({
     name: 'Goku',
-    location: 'Namek',
+    location: 'Earth',
     age: 37,
     gender: 'male',
     favLanguage: 'JavaScript',
@@ -80,7 +78,7 @@ const naruto = new Student({
     gender: 'male',
     previousBackground: 'Ninja Stuff',
     className: 'Team 7',
-    favSubjects: ['asdf','asdf','asdf']
+    favSubjects: ['Python','PHP','Ruby']
 });
 
 const ichigo = new ProjectManager({
@@ -95,10 +93,16 @@ const ichigo = new ProjectManager({
 
 
 console.log(naruto.location); 
+console.log(naruto.speak()); 
+console.log(goku.speak()); 
+console.log(ichigo.speak()); 
 console.log(goku.location);
 console.log(goku.demo('Python'));
+console.log(goku.grade(naruto, 'Python'));
 console.log(naruto.className);
 console.log(ichigo.catchPhrase);
 console.log(ichigo.debugsCode(naruto, 'JavaScript')); 
 console.log(ichigo.standUp('Ninja Channel')); 
 console.log(naruto.listsSubjects(naruto.favSubjects)); 
+console.log(naruto.PRAssignment('CSS')); 
+console.log(naruto.sprintChallenge('React')); 
